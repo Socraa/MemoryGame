@@ -12,7 +12,27 @@ for (let i = 0; i < emojis.length; i++){
     box.style.background = "rgb(243, 50, 64)";
 
     box.addEventListener("click", event =>{
-        box.classList.add('boxOpen');
+        box.classList.add('boxOpen')
+        setTimeout(() =>{
+            if(document.querySelectorAll('.boxOpen').length > 1){
+                if(document.querySelectorAll('.boxOpen')[0].innerHTML == document.querySelectorAll('.boxOpen')[1].innerHTML){
+
+                    document.querySelectorAll('.boxOpen')[0].classList.add('boxMatch')
+                    document.querySelectorAll('.boxOpen')[1].classList.add('boxMatch')
+
+                    document.querySelectorAll('.boxOpen')[1].classList.remove('boxOpen')
+                    document.querySelectorAll('.boxOpen')[0].classList.remove('boxOpen')
+
+
+                    if(document.querySelectorAll('.boxMatch').length == emojis.length){
+                        alert('you win')
+                    }
+                }else{
+                    document.querySelectorAll('.boxOpen')[1].classList.remove('boxOpen')
+                    document.querySelectorAll('.boxOpen')[0].classList.remove('boxOpen')
+                }
+            }
+        }, 700);
     })
 
     document.querySelector('.game').appendChild(box); // put the fucking box inside the game div

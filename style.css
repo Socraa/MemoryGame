@@ -69,7 +69,7 @@ h2{
 .items{
     position: relative;
     border: 2px solid black;
-    font-size: 50px;
+    font-size: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,13 +87,13 @@ h2{
     inset: 0;
     background-color: rgb(230, 37, 37);
     border: 1px solid ;
-    /* opacity: 0.8; */
     transition: 0.25;
     transform: rotateY(0deg);
+    opacity: 0.9;
     backface-visibility: hidden; /*the content will vanish since the backface it will be hidden*/
 }
 
-.boxOpen::after{
+.boxOpen::after, .boxMatch::after{
 
     transform: rotateY(180deg);
 
