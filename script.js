@@ -17,11 +17,11 @@ for (let i = 0; i < emojis.length; i++){
             if(document.querySelectorAll('.boxOpen').length > 1){
                 if(document.querySelectorAll('.boxOpen')[0].innerHTML == document.querySelectorAll('.boxOpen')[1].innerHTML){
 
-                    document.querySelectorAll('.boxOpen')[0].classList.add('boxMatch')
+                    document.querySelectorAll('.boxOpen')[0].classList.add('boxMatch') // flip it to back 
                     document.querySelectorAll('.boxOpen')[1].classList.add('boxMatch')
 
-                    document.querySelectorAll('.boxOpen')[1].classList.remove('boxOpen')
-                    document.querySelectorAll('.boxOpen')[0].classList.remove('boxOpen')
+                    document.querySelectorAll('.boxOpen')[1].classList.remove('boxOpen') // flip again to shot the emoji
+                    document.querySelectorAll('.boxOpen')[0].classList.remove('boxOpen') // we do that to remove the boxOpen to reset the index of boxOpen
 
 
                     if(document.querySelectorAll('.boxMatch').length == emojis.length){

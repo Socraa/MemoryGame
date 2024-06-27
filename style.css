@@ -67,30 +67,26 @@ h2{
 }
 
 .items{
-    position: relative;
+    /* position: relative; */
     border: 2px solid black;
     font-size: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: rotateY(180deg);
-    transition: 0.25s;
-}
-
-.items.boxOpen{
-    transform: rotateY(0deg);
+    position: relative;
 }
 
 .items::after{
     content: '';
     position: absolute;
+    background-color: rgb(216, 18, 18);
     inset: 0;
-    background-color: rgb(230, 37, 37);
-    border: 1px solid ;
-    transition: 0.25;
-    transform: rotateY(0deg);
-    opacity: 0.9;
-    backface-visibility: hidden; /*the content will vanish since the backface it will be hidden*/
+    backface-visibility: hidden;
+    /* transition: transform 0.6s; */
+}
+
+.boxOpen::after{
+    transform: rotateY(180deg);
 }
 
 .boxOpen::after, .boxMatch::after{
@@ -98,3 +94,9 @@ h2{
     transform: rotateY(180deg);
 
 }
+
+
+
+
+
+
